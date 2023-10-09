@@ -1,0 +1,53 @@
+from fractions import Fraction
+
+
+def calcular_combustible(fraccion):
+  """Calcula el porcentaje de combustible en el tanque, dada una fracción X/Y.
+
+  Args:
+    fraccion: Una cadena con el formato X/Y, donde X e Y son números enteros.
+
+  Returns:
+    Un número entero que representa el porcentaje de combustible en el tanque, o
+    "E" si el porcentaje es menor a 1%, "F" si el porcentaje es mayor a 99%, o
+    una excepción en caso de error.
+  """
+
+  try:
+    numerador, denominador = int(fraccion.split("/")[0]), int(fraccion.split("/")[1])
+  except ValueError:
+    raise ValueError("Solo se permiten números enteros")
+
+  if denominador == 0:
+    raise ZeroDivisionError
+
+  if numerador > denominador:
+    raise ValueError("El numerador debe ser menor o igual al denominador")
+
+  combustible = (numerador / denominador) * 100
+
+  if combustible < 1:
+    return "E"
+  elif combustible > 99:
+    return "F"
+  else:
+    return int(combustible)
+
+
+def main():
+  """Pide al usuario una fracción y muestra el porcentaje de combustible en el tanque."""
+
+  while True:
+    fraccion = input("Ingrese una fracción (X/Y): ")
+    try:
+      porcentaje = calcular_combustible(fraccion)
+      print(f"Cantidad de combustible en el tanque: {porcentaje}%")
+      break
+    except ValueError:
+      print("Ingrese una fracción válida")
+    except ZeroDivisionError:
+      print("El denominador no puede ser cero")
+
+
+if __name__ == "__main__":
+  main()
