@@ -1,0 +1,29 @@
+# Script calculos.py
+
+import operaciones
+
+
+def main():
+  """
+  Ejecuta las funciones del módulo `operaciones`.
+  """
+
+  # Solicita al usuario que ingrese los datos
+  x = float(input("Ingrese el primer número: "))
+  y = float(input("Ingrese el segundo número: "))
+
+  # Realiza las operaciones
+  suma = operaciones.suma(x, y)
+  resta = operaciones.resta(x, y)
+  producto = operaciones.producto(x, y)
+  division = operaciones.division(x, y)
+
+  # Imprime los resultados
+  print("Suma:", suma)
+  print("Resta:", resta)
+  print("Producto:", producto)
+  print("División:", division)
+
+
+if __name__ == "__main__":
+  main()

@@ -1,0 +1,75 @@
+# Módulo operaciones.py
+
+def suma(x, y):
+  """
+  Realiza la suma de dos números.
+
+  Args:
+    x: El primer número.
+    y: El segundo número.
+
+  Returns:
+    El resultado de la suma.
+  """
+
+  if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+    raise TypeError("Error: Tipo de dato no válido.")
+
+  return x + y
+
+
+def resta(x, y):
+  """
+  Realiza la resta de dos números.
+
+  Args:
+    x: El primer número.
+    y: El segundo número.
+
+  Returns:
+    El resultado de la resta.
+  """
+
+  if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+    raise TypeError("Error: Tipo de dato no válido.")
+
+  return x - y
+
+
+def producto(x, y):
+  """
+  Realiza el producto de dos números.
+
+  Args:
+    x: El primer número.
+    y: El segundo número.
+
+  Returns:
+    El resultado del producto.
+  """
+
+  if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+    raise TypeError("Error: Tipo de dato no válido.")
+
+  return x * y
+
+
+def division(x, y):
+  """
+  Realiza la división de dos números.
+
+  Args:
+    x: El primer número.
+    y: El segundo número.
+
+  Returns:
+    El resultado de la división.
+  """
+
+  if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+    raise TypeError("Error: Tipo de dato no válido.")
+
+  if y == 0:
+    raise ZeroDivisionError("Error: No es posible dividir entre cero.")
+
+  return x / y
